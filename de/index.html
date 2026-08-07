@@ -5,83 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TableFoe — Finde einen Gegner, spiele Warhammer</title>
 <meta name="description" content="TableFoe verbindet Warhammer-Spieler, damit du in deiner Nähe einen Gegner findest, offene Partien veröffentlichst und dich zum Spielen triffst.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root { color-scheme: dark; }
+  :root {
+    --bg: #17151A;
+    --surface: #221E27;
+    --accent: #C9A227;
+    --accent-light: #E3C25C;
+    --text: #F1ECE0;
+    --text-muted: #AFA593;
+    --border: #35303A;
+  }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .site-nav {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: #17151A;
-    color: #F2EFE9;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    text-align: center;
-    padding: 24px;
+    justify-content: space-between;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 20px 20px 0;
   }
-  .hex {
-    width: 56px;
-    height: 56px;
-    margin-bottom: 20px;
-  }
-  h1 {
-    font-size: 2rem;
-    letter-spacing: 0.05em;
-    margin: 0 0 8px;
-  }
-  p.tagline {
-    color: #A9A29B;
-    margin: 0 0 8px;
-    font-size: 1.05rem;
-  }
-  p.pitch {
-    color: #A9A29B;
-    max-width: 480px;
-    margin: 0 0 32px;
-    font-size: 0.95rem;
-  }
-  .store {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #6E6860;
-    background: transparent;
-    border: 1px solid #3A362F;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 12px 22px;
-    border-radius: 10px;
-    margin-bottom: 40px;
-    cursor: default;
-  }
-  .store .badge {
-    font-size: 0.7rem;
+  .wordmark {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #C9A227;
-    border: 1px solid #C9A227;
-    border-radius: 999px;
-    padding: 2px 8px;
-  }
-  nav a {
-    display: inline-block;
-    color: #A9A29B;
-    text-decoration: none;
-    font-size: 0.85rem;
-    padding: 8px 14px;
-  }
-  nav a:hover {
-    color: #F2EFE9;
+    color: var(--accent);
   }
   .lang-switch {
     display: flex;
     gap: 6px;
-    margin-bottom: 24px;
   }
   .lang-switch a {
-    color: #6E6860;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    color: var(--text-muted);
     text-decoration: none;
     font-size: 0.75rem;
     letter-spacing: 0.05em;
@@ -89,48 +62,116 @@
     border-radius: 6px;
   }
   .lang-switch a:hover {
-    color: #F2EFE9;
+    color: var(--text);
   }
   .lang-switch a.active {
-    color: #C9A227;
-    border: 1px solid #C9A227;
+    color: var(--accent);
+    border: 1px solid var(--accent);
   }
-  .how-it-works {
+  .hero {
+    text-align: center;
+    padding: 56px 0 40px;
+  }
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    margin: 0 0 14px;
+  }
+  .hero .subtitle {
+    color: var(--text-muted);
+    max-width: 440px;
+    margin: 0 auto 28px;
+    font-size: 1rem;
+  }
+  .btn-cta {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+  }
+  .btn-cta:hover {
+    background: var(--accent-light);
+  }
+  .steps {
     list-style: none;
     padding: 0;
-    margin: 0 0 32px;
-    max-width: 420px;
-    text-align: left;
-    color: #A9A29B;
-    font-size: 0.9rem;
-  }
-  .how-it-works li {
+    margin: 0 0 48px;
     display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
+    flex-direction: column;
+    gap: 20px;
   }
-  .how-it-works li::before {
-    content: "▸";
-    color: #C9A227;
-    flex-shrink: 0;
+  .steps li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .step-num {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+  .steps p {
+    margin: 4px 0 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    text-align: left;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .card h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0 0 18px;
   }
   .screenshots {
     display: flex;
     gap: 12px;
-    margin-bottom: 32px;
     flex-wrap: wrap;
     justify-content: center;
   }
   .screenshot-placeholder {
-    width: 120px;
+    width: 100px;
     aspect-ratio: 9 / 19;
-    border: 1px dashed #3A362F;
-    border-radius: 16px;
+    border: 1px dashed var(--border);
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #6E6860;
-    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-size: 0.65rem;
     padding: 8px;
     text-align: center;
   }
@@ -139,52 +180,111 @@
     gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 40px;
   }
   .store {
-    margin-bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 8px;
+  }
+  .store .badge {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    padding: 2px 8px;
+  }
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0 40px;
+    text-align: center;
+  }
+  footer nav a {
+    display: inline-block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 8px 14px;
+  }
+  footer nav a:hover {
+    color: var(--text);
+  }
+  footer .copyright {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin: 8px 0 0;
   }
 </style>
 </head>
 <body>
-  <nav class="lang-switch">
-    <a href="../index.html">ES</a>
-    <a href="../en/index.html">EN</a>
-    <a href="index.html" class="active">DE</a>
-  </nav>
-  <svg class="hex" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 3 L35 11 L35 29 L20 37 L5 29 L5 11 Z" stroke="#C9A227" stroke-width="1.6" stroke-linejoin="round"/>
-    <line x1="20" y1="3" x2="20" y2="37" stroke="#C9A227" stroke-width="1.6" opacity="0.5"/>
-    <line x1="5" y1="20" x2="35" y2="20" stroke="#C9A227" stroke-width="1.6" opacity="0.5"/>
-  </svg>
-  <h1>TABLEFOE</h1>
-  <p class="tagline">Finde einen Gegner. Spiele.</p>
-  <p class="pitch">
-    Veröffentliche deine Warhammer-Partie mit System, Punkten und Spielstil
-    und lass andere Spieler in deiner Nähe Kontakt mit dir aufnehmen, um
-    sich zu verabreden.
-  </p>
-  <ul class="how-it-works">
-    <li>Veröffentliche deine Partie: System, Punkte und Spielstil.</li>
-    <li>Andere Spieler in deiner Nähe zeigen Interesse.</li>
-    <li>Ihr nehmt Kontakt auf und verabredet euch zum Spielen.</li>
-  </ul>
-  <div class="screenshots">
-    <div class="screenshot-placeholder">Screenshot folgt</div>
-    <div class="screenshot-placeholder">Screenshot folgt</div>
-    <div class="screenshot-placeholder">Screenshot folgt</div>
-  </div>
-  <div class="stores">
-    <span class="store">
-      Google Play <span class="badge">Demnächst</span>
+  <nav class="site-nav">
+    <span class="wordmark">TableFoe</span>
+    <span class="lang-switch">
+      <a href="../index.html">ES</a>
+      <a href="../en/index.html">EN</a>
+      <a href="index.html" class="active">DE</a>
     </span>
-    <span class="store">
-      App Store <span class="badge">Demnächst</span>
-    </span>
-  </div>
-  <nav>
-    <a href="privacy.html">Datenschutzerklärung</a>
-    <a href="terms.html">Nutzungsbedingungen</a>
   </nav>
+  <main>
+    <section class="hero">
+      <h1>Finde einen Gegner. Spiele.</h1>
+      <p class="subtitle">
+        Veröffentliche deine Warhammer-Partie mit System, Punkten und
+        Spielstil und lass andere Spieler in deiner Nähe Kontakt mit dir
+        aufnehmen, um sich zu verabreden.
+      </p>
+      <a class="btn-cta" href="#vorschau">TableFoe ansehen</a>
+    </section>
+    <ol class="steps">
+      <li>
+        <span class="step-num">1</span>
+        <p>Veröffentliche deine Partie: System, Punkte und Spielstil.</p>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <p>Andere Spieler in deiner Nähe zeigen Interesse.</p>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <p>Ihr nehmt Kontakt auf und verabredet euch zum Spielen.</p>
+      </li>
+    </ol>
+    <div class="cards" id="vorschau">
+      <div class="card">
+        <h2>So sieht TableFoe aus</h2>
+        <div class="screenshots">
+          <div class="screenshot-placeholder">Screenshot folgt</div>
+          <div class="screenshot-placeholder">Screenshot folgt</div>
+          <div class="screenshot-placeholder">Screenshot folgt</div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Demnächst verfügbar</h2>
+        <div class="stores">
+          <span class="store">
+            Google Play <span class="badge">Demnächst</span>
+          </span>
+          <span class="store">
+            App Store <span class="badge">Demnächst</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <nav>
+      <a href="privacy.html">Datenschutzerklärung</a>
+      <a href="terms.html">Nutzungsbedingungen</a>
+    </nav>
+    <p class="copyright">© 2026 TableFoe</p>
+  </footer>
 </body>
 </html>
