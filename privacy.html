@@ -43,10 +43,35 @@
     font-size: 0.92rem;
   }
   .back { display: inline-block; margin-bottom: 24px; }
+  .lang-switch {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .lang-switch a {
+    color: #6E6860;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+  .lang-switch a:hover {
+    color: #F2EFE9;
+  }
+  .lang-switch a.active {
+    color: #C9A227;
+    border: 1px solid #C9A227;
+  }
 </style>
 </head>
 <body>
 <main>
+  <nav class="lang-switch">
+    <a href="privacy.html" class="active">ES</a>
+    <a href="en/privacy.html">EN</a>
+    <a href="de/privacy.html">DE</a>
+  </nav>
   <a class="back" href="index.html">← TableFoe</a>
   <h1>Política de privacidad de TableFoe</h1>
   <p class="meta">Última actualización: 6 de agosto de 2026.</p>
