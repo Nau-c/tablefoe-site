@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eliminar cuenta y datos — TableFoe</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0;
+    background: #17151A;
+    color: #F2EFE9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  a { color: #C9A227; }
+  h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+  }
+  h2 {
+    font-size: 1.15rem;
+    margin-top: 2.2em;
+    color: #C9A227;
+  }
+  p.meta {
+    color: #A9A29B;
+    font-size: 0.9rem;
+    margin-top: 0;
+  }
+  .steps {
+    border: 1px solid #34303A;
+    background: #221F26;
+    border-radius: 10px;
+    padding: 18px 22px;
+  }
+  .steps h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #F2EFE9;
+  }
+  .draft-note {
+    border: 1px solid #34303A;
+    background: #221F26;
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: #A9A29B;
+    font-size: 0.92rem;
+  }
+  .back { display: inline-block; margin-bottom: 24px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 0.92rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #34303A;
+    vertical-align: top;
+  }
+  th { color: #C9A227; font-weight: 600; }
+  .lang-switch {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .lang-switch a {
+    color: #6E6860;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+  .lang-switch a:hover {
+    color: #F2EFE9;
+  }
+  .lang-switch a.active {
+    color: #C9A227;
+    border: 1px solid #C9A227;
+  }
+</style>
+</head>
+<body>
+<main>
+  <nav class="lang-switch">
+    <a href="delete-account.html" class="active">ES</a>
+    <a href="en/delete-account.html">EN</a>
+    <a href="de/delete-account.html">DE</a>
+  </nav>
+  <a class="back" href="index.html">← TableFoe</a>
+  <h1>Eliminar cuenta y datos de TableFoe</h1>
+  <p class="meta">Última actualización: 28 de agosto de 2026.</p>
+
+  <p>TableFoe es la app de <strong>TableFoe</strong> (contacto:
+  <a href="mailto:soporte@tablefoe.app">soporte@tablefoe.app</a>) para
+  encontrar rival y jugar partidas de Warhammer. Esta página explica cómo
+  pedir que se elimine tu cuenta y tus datos personales, qué se borra y
+  qué se conserva.</p>
+
+  <h2>Cómo solicitar la eliminación</h2>
+
+  <div class="steps">
+    <h3>Opción 1 — Desde la propia app (inmediata)</h3>
+    <p>Abre TableFoe → inicia sesión → pulsa el icono de perfil → baja
+    hasta <strong>"Zona de peligro"</strong> → <strong>"Eliminar
+    cuenta"</strong> → confirma. La cuenta y los datos asociados se borran
+    al instante, sin esperas.</p>
+  </div>
+
+  <div class="steps" style="margin-top: 16px;">
+    <h3>Opción 2 — Sin tener la app instalada</h3>
+    <p>Escribe a <a href="mailto:soporte@tablefoe.app?subject=Eliminar%20mi%20cuenta%20de%20TableFoe">soporte@tablefoe.app</a>
+    desde el correo con el que te registraste, indicando "Eliminar mi
+    cuenta de TableFoe". Verificamos que la solicitud viene de esa cuenta
+    y la eliminamos en un plazo máximo de 30 días.</p>
+  </div>
+
+  <h2>Qué datos se eliminan</h2>
+  <table>
+    <tr><th>Dato</th><th>¿Se elimina?</th></tr>
+    <tr><td>Cuenta (correo, contraseña cifrada)</td><td>Sí, de inmediato</td></tr>
+    <tr><td>Perfil (nombre visible, sistema de juego, nivel, estilo de juego)</td><td>Sí, de inmediato</td></tr>
+    <tr><td>Contacto opcional (Discord/WhatsApp que hayas añadido)</td><td>Sí, de inmediato</td></tr>
+    <tr><td>Partidas abiertas que hayas publicado</td><td>Sí, de inmediato</td></tr>
+    <tr><td>Valoraciones que hayas dado o recibido de otros jugadores</td><td>Sí, de inmediato</td></tr>
+    <tr><td>Token de notificaciones push (FCM)</td><td>Sí, de inmediato</td></tr>
+  </table>
+
+  <h2>Qué se conserva y durante cuánto tiempo</h2>
+  <ul>
+    <li><strong>Copias de seguridad de la base de datos</strong>: tras el
+    borrado, tu información puede persistir de forma residual en copias
+    de seguridad cifradas de nuestro proveedor (Supabase) hasta que esas
+    copias rotan de forma natural, con un máximo de 30 días — no las
+    restauramos ni las consultamos salvo para recuperación ante
+    desastres.</li>
+    <li><strong>Datos analíticos y de publicidad</strong> (Firebase
+    Analytics, Google AdMob): son eventos agregados ligados a un
+    identificador de dispositivo/publicidad, no a tu cuenta ni a tu
+    nombre, así que borrar la cuenta no los borra automáticamente; Google
+    los conserva según su propia política (por defecto, hasta 14 meses en
+    Firebase Analytics). Puedes además restablecer o eliminar el
+    identificador de publicidad de tu dispositivo desde los ajustes de
+    Android en cualquier momento.</li>
+  </ul>
+
+  <p class="draft-note">Este documento es un borrador de trabajo, no
+  constituye asesoría legal. Revísalo (idealmente con un abogado) antes de
+  depender de él para publicar en las tiendas de aplicaciones.</p>
+</main>
+</body>
+</html>

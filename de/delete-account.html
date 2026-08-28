@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Konto und Daten löschen — TableFoe</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0;
+    background: #17151A;
+    color: #F2EFE9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  a { color: #C9A227; }
+  h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+  }
+  h2 {
+    font-size: 1.15rem;
+    margin-top: 2.2em;
+    color: #C9A227;
+  }
+  p.meta {
+    color: #A9A29B;
+    font-size: 0.9rem;
+    margin-top: 0;
+  }
+  .steps {
+    border: 1px solid #34303A;
+    background: #221F26;
+    border-radius: 10px;
+    padding: 18px 22px;
+  }
+  .steps h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #F2EFE9;
+  }
+  .draft-note {
+    border: 1px solid #34303A;
+    background: #221F26;
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: #A9A29B;
+    font-size: 0.92rem;
+  }
+  .back { display: inline-block; margin-bottom: 24px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 0.92rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #34303A;
+    vertical-align: top;
+  }
+  th { color: #C9A227; font-weight: 600; }
+  .lang-switch {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .lang-switch a {
+    color: #6E6860;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+  .lang-switch a:hover {
+    color: #F2EFE9;
+  }
+  .lang-switch a.active {
+    color: #C9A227;
+    border: 1px solid #C9A227;
+  }
+</style>
+</head>
+<body>
+<main>
+  <nav class="lang-switch">
+    <a href="../delete-account.html">ES</a>
+    <a href="../en/delete-account.html">EN</a>
+    <a href="delete-account.html" class="active">DE</a>
+  </nav>
+  <a class="back" href="index.html">← TableFoe</a>
+  <h1>Konto und Daten von TableFoe löschen</h1>
+  <p class="meta">Zuletzt aktualisiert: 28. August 2026.</p>
+
+  <p>TableFoe ist die App von <strong>TableFoe</strong> (Kontakt:
+  <a href="mailto:soporte@tablefoe.app">soporte@tablefoe.app</a>), um
+  einen Gegner zu finden und Warhammer-Partien zu spielen. Diese Seite
+  erklärt, wie du die Löschung deines Kontos und deiner personenbezogenen
+  Daten beantragen kannst, was gelöscht wird und was wir aufbewahren.</p>
+
+  <h2>Wie du die Löschung beantragst</h2>
+
+  <div class="steps">
+    <h3>Option 1 — In der App selbst (sofort)</h3>
+    <p>Öffne TableFoe → melde dich an → tippe auf das Profil-Symbol →
+    scrolle zur <strong>"Gefahrenzone"</strong> → <strong>"Konto
+    löschen"</strong> → bestätige. Dein Konto und die zugehörigen Daten
+    werden sofort gelöscht, ohne Wartezeit.</p>
+  </div>
+
+  <div class="steps" style="margin-top: 16px;">
+    <h3>Option 2 — Ohne installierte App</h3>
+    <p>Schreibe eine E-Mail an <a href="mailto:soporte@tablefoe.app?subject=Mein%20TableFoe-Konto%20l%C3%B6schen">soporte@tablefoe.app</a>
+    von der Adresse, mit der du dich registriert hast, mit dem Hinweis
+    "Mein TableFoe-Konto löschen". Wir überprüfen, dass die Anfrage von
+    diesem Konto stammt, und löschen es innerhalb von maximal 30 Tagen.</p>
+  </div>
+
+  <h2>Welche Daten gelöscht werden</h2>
+  <table>
+    <tr><th>Daten</th><th>Gelöscht?</th></tr>
+    <tr><td>Konto (E-Mail, verschlüsseltes Passwort)</td><td>Ja, sofort</td></tr>
+    <tr><td>Profil (Anzeigename, Spielsystem, Erfahrungsstand, Spielstil)</td><td>Ja, sofort</td></tr>
+    <tr><td>Optionaler Kontakt (hinzugefügtes Discord/WhatsApp)</td><td>Ja, sofort</td></tr>
+    <tr><td>Von dir veröffentlichte offene Partien</td><td>Ja, sofort</td></tr>
+    <tr><td>Bewertungen, die du abgegeben oder erhalten hast</td><td>Ja, sofort</td></tr>
+    <tr><td>Push-Benachrichtigungs-Token (FCM)</td><td>Ja, sofort</td></tr>
+  </table>
+
+  <h2>Was wir aufbewahren und wie lange</h2>
+  <ul>
+    <li><strong>Datenbank-Backups</strong>: Nach der Löschung können
+    deine Daten noch für kurze Zeit in den verschlüsselten Backups
+    unseres Anbieters (Supabase) verbleiben, bis diese Backups auf
+    natürliche Weise rotieren — maximal 30 Tage. Wir stellen sie nicht
+    wieder her und greifen nicht darauf zu, außer zur
+    Notfallwiederherstellung.</li>
+    <li><strong>Analyse- und Werbedaten</strong> (Firebase Analytics,
+    Google AdMob): Das sind aggregierte Ereignisse, die an eine
+    Geräte-/Werbe-ID gebunden sind, nicht an dein Konto oder deinen
+    Namen. Das Löschen des Kontos löscht sie daher nicht automatisch;
+    Google speichert sie gemäß seiner eigenen Richtlinie (standardmäßig
+    bis zu 14 Monate bei Firebase Analytics). Du kannst die
+    Werbe-ID deines Geräts jederzeit in den Android-Einstellungen
+    zurücksetzen oder löschen.</li>
+  </ul>
+
+  <p class="draft-note">Dieses Dokument ist ein Arbeitsentwurf und stellt
+  keine Rechtsberatung dar. Prüfe es (idealerweise mit einem
+  Rechtsanwalt), bevor du dich darauf verlässt, um es in den
+  App-Stores zu veröffentlichen.</p>
+</main>
+</body>
+</html>

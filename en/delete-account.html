@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete account and data — TableFoe</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0;
+    background: #17151A;
+    color: #F2EFE9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  a { color: #C9A227; }
+  h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+  }
+  h2 {
+    font-size: 1.15rem;
+    margin-top: 2.2em;
+    color: #C9A227;
+  }
+  p.meta {
+    color: #A9A29B;
+    font-size: 0.9rem;
+    margin-top: 0;
+  }
+  .steps {
+    border: 1px solid #34303A;
+    background: #221F26;
+    border-radius: 10px;
+    padding: 18px 22px;
+  }
+  .steps h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #F2EFE9;
+  }
+  .draft-note {
+    border: 1px solid #34303A;
+    background: #221F26;
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: #A9A29B;
+    font-size: 0.92rem;
+  }
+  .back { display: inline-block; margin-bottom: 24px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 0.92rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #34303A;
+    vertical-align: top;
+  }
+  th { color: #C9A227; font-weight: 600; }
+  .lang-switch {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .lang-switch a {
+    color: #6E6860;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+  .lang-switch a:hover {
+    color: #F2EFE9;
+  }
+  .lang-switch a.active {
+    color: #C9A227;
+    border: 1px solid #C9A227;
+  }
+</style>
+</head>
+<body>
+<main>
+  <nav class="lang-switch">
+    <a href="../delete-account.html">ES</a>
+    <a href="delete-account.html" class="active">EN</a>
+    <a href="../de/delete-account.html">DE</a>
+  </nav>
+  <a class="back" href="index.html">← TableFoe</a>
+  <h1>Delete your TableFoe account and data</h1>
+  <p class="meta">Last updated: August 28, 2026.</p>
+
+  <p>TableFoe is the app made by <strong>TableFoe</strong> (contact:
+  <a href="mailto:soporte@tablefoe.app">soporte@tablefoe.app</a>) for
+  finding an opponent and playing Warhammer games. This page explains how
+  to request the deletion of your account and personal data, what gets
+  removed, and what we keep.</p>
+
+  <h2>How to request deletion</h2>
+
+  <div class="steps">
+    <h3>Option 1 — From the app itself (instant)</h3>
+    <p>Open TableFoe → sign in → tap the profile icon → scroll down to
+    <strong>"Danger zone"</strong> → <strong>"Delete account"</strong> →
+    confirm. Your account and associated data are deleted immediately, no
+    waiting period.</p>
+  </div>
+
+  <div class="steps" style="margin-top: 16px;">
+    <h3>Option 2 — Without the app installed</h3>
+    <p>Email <a href="mailto:soporte@tablefoe.app?subject=Delete%20my%20TableFoe%20account">soporte@tablefoe.app</a>
+    from the address you registered with, stating "Delete my TableFoe
+    account". We verify the request came from that account and delete it
+    within 30 days at the latest.</p>
+  </div>
+
+  <h2>What data gets deleted</h2>
+  <table>
+    <tr><th>Data</th><th>Deleted?</th></tr>
+    <tr><td>Account (email, encrypted password)</td><td>Yes, immediately</td></tr>
+    <tr><td>Profile (display name, game system, experience level, play style)</td><td>Yes, immediately</td></tr>
+    <tr><td>Optional contact (Discord/WhatsApp you added)</td><td>Yes, immediately</td></tr>
+    <tr><td>Open matches you've published</td><td>Yes, immediately</td></tr>
+    <tr><td>Ratings you've given or received from other players</td><td>Yes, immediately</td></tr>
+    <tr><td>Push notification token (FCM)</td><td>Yes, immediately</td></tr>
+  </table>
+
+  <h2>What we keep, and for how long</h2>
+  <ul>
+    <li><strong>Database backups</strong>: after deletion, your
+    information may persist residually in our provider's (Supabase)
+    encrypted backups until those backups naturally rotate out, for a
+    maximum of 30 days — we don't restore or query them except for
+    disaster recovery.</li>
+    <li><strong>Analytics and advertising data</strong> (Firebase
+    Analytics, Google AdMob): these are aggregated events tied to a
+    device/advertising identifier, not to your account or name, so
+    deleting the account doesn't automatically delete them; Google
+    retains them per its own policy (by default, up to 14 months in
+    Firebase Analytics). You can also reset or delete your device's
+    advertising identifier from Android settings at any time.</li>
+  </ul>
+
+  <p class="draft-note">This document is a working draft and does not
+  constitute legal advice. Review it (ideally with a lawyer) before
+  relying on it to publish on the app stores.</p>
+</main>
+</body>
+</html>
