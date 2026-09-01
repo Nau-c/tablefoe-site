@@ -27,7 +27,7 @@
   "createAccount": "Create account",
   "signIn": "Sign in",
   "orContinueWith": "or continue with",
-  "discordComingSoon": "Discord (coming soon)",
+  "signInWithDiscord": "Sign in with Discord",
   "alreadyHaveAccount": "Already have an account? ",
   "dontHaveAccount": "Don't have an account? ",
   "signInLink": "Sign in",
