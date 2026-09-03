@@ -34270,7 +34270,7 @@ return s==null?b:s},
 b3K(a){var s
 A:{s="\ud83d\udd2b"
 if("40k"===a||"horus_heresy"===a||"legions_imperialis"===a||"adeptus_titanicus"===a)break A
-if("aos"===a||"old_world"===a||"opr_fantasy"===a||"frostgrave"===a||"moonstone"===a||"carnevale"===a||"trench_crusade"===a||"asoiaf"===a||"conquest"===a||"saga"===a||"muskets_tomahawks"===a||"meg"===a||"field_of_glory"===a){s="\u2694\ufe0f"
+if("aos"===a||"old_world"===a||"opr_fantasy"===a||"frostgrave"===a||"moonstone"===a||"carnevale"===a||"trench_crusade"===a||"asoiaf"===a||"conquest"===a||"saga"===a||"muskets_tomahawks"===a||"meg"===a||"field_of_glory"===a||"mesbg"===a){s="\u2694\ufe0f"
 break A}if("kill_team"===a||"necromunda"===a||"firefight"===a||"infinity"===a){s="\ud83c\udfaf"
 break A}if("warcry"===a||"underworlds"===a||"malifaux"===a||"gaslands"===a){s="\ud83d\udc80"
 break A}if("blood_bowl"===a){s="\ud83c\udfc8"
@@ -122755,6 +122755,8 @@ B.tq=new A.ib(B.lX)
 B.iR=new A.nh(0,"up")
 B.tp=new A.ib(B.iR)
 B.a4H=new A.cU([B.h1,B.tq,B.h0,B.tp],t.Fp)
+B.a7E={"40k":0,horus_heresy:1,aos:2,kill_team:3,warcry:4,necromunda:5,blood_bowl:6,underworlds:7,adeptus_titanicus:8,legions_imperialis:9,old_world:10,mesbg:11,opr_grimdark:12,opr_fantasy:13,firefight:14,infinity:15,bolt_action:16,flames_of_war:17,chain_of_command:18,black_powder:19,sw_legion:20,sw_xwing:21,sw_armada:22,mcp:23,warmachine:24,kings_of_war:25,deadzone:26,malifaux:27,saga:28,muskets_tomahawks:29,battletech:30,conquest:31,frostgrave:32,gaslands:33,moonstone:34,carnevale:35,trench_crusade:36,asoiaf:37,meg:38,field_of_glory:39,otros:40}
+B.ii=new A.X(B.a7E,["Warhammer 40.000","Horus Heresy (30k)","Age of Sigmar","Kill Team","Warcry","Necromunda","Blood Bowl","Warhammer Underworlds","Adeptus Titanicus","Legions Imperialis","Warhammer: The Old World","Middle-earth Strategy Battle Game","Grimdark Future (OPR)","Age of Fantasy (OPR)","Firefight (OPR)","Infinity the Game","Bolt Action","Flames of War","Chain of Command","Black Powder","Star Wars: Legion","Star Wars: X-Wing","Star Wars: Armada","Marvel Crisis Protocol","Warmachine / Hordes","Kings of War","Deadzone","Malifaux","SAGA","Muskets & Tomahawks","Battletech","Conquest: Last Argument of Kings","Frostgrave","Gaslands","Moonstone","Carnevale","Trench Crusade","A Song of Ice and Fire","Mortem et Gloriam","Field of Glory","Otros"],t.w)
 B.abJ=new A.ax(B.oI,!1,!1,!1,!1,B.q)
 B.L_=new A.ax(B.i3,!1,!1,!1,!1,B.q)
 B.L0=new A.ax(B.kT,!1,!1,!1,!1,B.q)
@@ -122804,8 +122806,6 @@ B.a4T=new A.X(B.il,["postgrest-dart/2.8.0"],t.w)
 B.a4U=new A.X(B.il,["gotrue-dart/2.25.0"],t.w)
 B.a4V=new A.X(B.il,["functions-dart/2.6.4"],t.w)
 B.a4W=new A.X(B.il,["storage-dart/2.6.0"],t.w)
-B.a7E={"40k":0,horus_heresy:1,aos:2,kill_team:3,warcry:4,necromunda:5,blood_bowl:6,underworlds:7,adeptus_titanicus:8,legions_imperialis:9,old_world:10,opr_grimdark:11,opr_fantasy:12,firefight:13,infinity:14,bolt_action:15,flames_of_war:16,chain_of_command:17,black_powder:18,sw_legion:19,sw_xwing:20,sw_armada:21,mcp:22,warmachine:23,kings_of_war:24,deadzone:25,malifaux:26,saga:27,muskets_tomahawks:28,battletech:29,conquest:30,frostgrave:31,gaslands:32,moonstone:33,carnevale:34,trench_crusade:35,asoiaf:36,meg:37,field_of_glory:38,otros:39}
-B.ii=new A.X(B.a7E,["Warhammer 40.000","Horus Heresy (30k)","Age of Sigmar","Kill Team","Warcry","Necromunda","Blood Bowl","Warhammer Underworlds","Adeptus Titanicus","Legions Imperialis","Warhammer: The Old World","Grimdark Future (OPR)","Age of Fantasy (OPR)","Firefight (OPR)","Infinity the Game","Bolt Action","Flames of War","Chain of Command","Black Powder","Star Wars: Legion","Star Wars: X-Wing","Star Wars: Armada","Marvel Crisis Protocol","Warmachine / Hordes","Kings of War","Deadzone","Malifaux","SAGA","Muskets & Tomahawks","Battletech","Conquest: Last Argument of Kings","Frostgrave","Gaslands","Moonstone","Carnevale","Trench Crusade","A Song of Ice and Fire","Mortem et Gloriam","Field of Glory","Otros"],t.w)
 B.a7F={af:0,am:1,ar:2,as:3,az:4,be:5,bg:6,bn:7,bs:8,ca:9,cs:10,cy:11,da:12,de:13,de_CH:14,el:15,en:16,en_AU:17,en_CA:18,en_GB:19,en_IE:20,en_IN:21,en_NZ:22,en_SG:23,en_US:24,en_ZA:25,es:26,es_419:27,es_MX:28,es_US:29,et:30,eu:31,fa:32,fi:33,fil:34,fr:35,fr_CA:36,ga:37,gl:38,gsw:39,gu:40,he:41,hi:42,hr:43,hu:44,hy:45,id:46,is:47,it:48,ja:49,ka:50,kk:51,km:52,kn:53,ko:54,ky:55,lo:56,lt:57,lv:58,mk:59,ml:60,mn:61,mr:62,ms:63,my:64,nb:65,ne:66,nl:67,no:68,or:69,pa:70,pl:71,ps:72,pt:73,pt_PT:74,ro:75,ru:76,si:77,sk:78,sl:79,sq:80,sr:81,sr_Latn:82,sv:83,sw:84,ta:85,te:86,th:87,tl:88,tr:89,uk:90,ur:91,uz:92,vi:93,zh:94,zh_HK:95,zh_TW:96,zu:97}
 B.m={d:0,E:1,EEEE:2,LLL:3,LLLL:4,M:5,Md:6,MEd:7,MMM:8,MMMd:9,MMMEd:10,MMMM:11,MMMMd:12,MMMMEEEEd:13,QQQ:14,QQQQ:15,y:16,yM:17,yMd:18,yMEd:19,yMMM:20,yMMMd:21,yMMMEd:22,yMMMM:23,yMMMMd:24,yMMMMEEEEd:25,yQQQ:26,yQQQQ:27,H:28,Hm:29,Hms:30,j:31,jm:32,jms:33,jmv:34,jmz:35,jz:36,m:37,ms:38,s:39,v:40,z:41,zzzz:42,ZZZZ:43}
 B.a5s=new A.X(B.m,["d","ccc","cccc","LLL","LLLL","L","dd-MM","EEE d/M","LLL","d MMM","EEE d MMM","LLLL","d MMMM","EEEE d MMMM","QQQ","QQQQ","y","MM-y","y-MM-dd","EEE y-MM-dd","MMM y","d MMM y","EEE d MMM y","MMMM y","d MMMM y","EEEE d MMMM y","QQQ y","QQQQ y","HH","HH:mm","HH:mm:ss","HH","HH:mm","HH:mm:ss","HH:mm v","HH:mm z","HH z","m","mm:ss","s","v","z","zzzz","ZZZZ"],t.w)
