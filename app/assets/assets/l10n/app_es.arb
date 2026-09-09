@@ -157,6 +157,7 @@
   "rateRivalSuccess": "¡Puntuación enviada!",
   "rateRivalAlready": "Ya has puntuado esta partida.",
   "rateRivalIntro": "¿Cómo fue la partida? Puntúa a tu rival (opcional por criterio).",
+  "rateRivalError": "No se pudo enviar la puntuación. Inténtalo de nuevo.",
 
   "criterionSportsmanship": "Deportividad",
   "criterionFriendly": "Amigable",

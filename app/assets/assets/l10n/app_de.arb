@@ -157,6 +157,7 @@
   "rateRivalSuccess": "Bewertung gesendet!",
   "rateRivalAlready": "Du hast diese Partie bereits bewertet.",
   "rateRivalIntro": "Wie lief die Partie? Bewerte deinen Gegner (jedes Kriterium optional).",
+  "rateRivalError": "Die Bewertung konnte nicht gesendet werden. Bitte versuche es erneut.",
 
   "criterionSportsmanship": "Sportlichkeit",
   "criterionFriendly": "Freundlich",

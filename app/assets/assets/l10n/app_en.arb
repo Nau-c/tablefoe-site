@@ -157,6 +157,7 @@
   "rateRivalSuccess": "Rating submitted!",
   "rateRivalAlready": "You have already rated this match.",
   "rateRivalIntro": "How did the match go? Rate your rival (each criterion is optional).",
+  "rateRivalError": "Couldn't submit the rating. Please try again.",
 
   "criterionSportsmanship": "Sportsmanship",
   "criterionFriendly": "Friendly",
