@@ -54,6 +54,10 @@
   "themeLight": "Light",
   "themeDark": "Dark",
   "themeSystem": "System",
+  "textSizeLabel": "Text size",
+  "textSizeNormal": "Normal",
+  "textSizeLarge": "Large",
+  "textSizeExtraLarge": "Extra large",
 
   "myMatchesTitle": "My matches",
   "noMatchesPublished": "You haven't published any matches yet.",

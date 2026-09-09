@@ -54,6 +54,10 @@
   "themeLight": "Claro",
   "themeDark": "Oscuro",
   "themeSystem": "Dispositivo",
+  "textSizeLabel": "Tamaño de texto",
+  "textSizeNormal": "Normal",
+  "textSizeLarge": "Grande",
+  "textSizeExtraLarge": "Muy grande",
 
   "myMatchesTitle": "Mis partidas",
   "noMatchesPublished": "Todavía no has publicado ninguna partida.",

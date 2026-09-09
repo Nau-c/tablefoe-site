@@ -54,6 +54,10 @@
   "themeLight": "Hell",
   "themeDark": "Dunkel",
   "themeSystem": "System",
+  "textSizeLabel": "Textgröße",
+  "textSizeNormal": "Normal",
+  "textSizeLarge": "Groß",
+  "textSizeExtraLarge": "Sehr groß",
 
   "myMatchesTitle": "Meine Partien",
   "noMatchesPublished": "Du hast noch keine Partie veröffentlicht.",
