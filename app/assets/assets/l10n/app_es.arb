@@ -5,6 +5,8 @@
 
   "fillEmailAndPassword": "Rellena correo y contraseña.",
   "tellUsYourName": "Cuéntanos cómo te llamas.",
+  "passwordRequirementsHint": "Mínimo 8 caracteres, con al menos una letra y un número.",
+  "passwordTooWeakMessage": "La contraseña necesita al menos 8 caracteres, con letras y números.",
   "registrationClosedMessage": "El registro está cerrado por ahora. ¡Vuelve pronto!",
   "accountCreatedCheckEmail": "Cuenta creada. Revisa tu correo para confirmarla antes de entrar.",
   "fieldLabelName": "Nombre",

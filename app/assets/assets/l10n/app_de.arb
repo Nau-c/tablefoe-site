@@ -5,6 +5,8 @@
 
   "fillEmailAndPassword": "Bitte E-Mail und Passwort ausfüllen.",
   "tellUsYourName": "Sag uns, wie du heißt.",
+  "passwordRequirementsHint": "Mindestens 8 Zeichen, mit einem Buchstaben und einer Zahl.",
+  "passwordTooWeakMessage": "Das Passwort braucht mindestens 8 Zeichen, mit Buchstaben und Zahlen.",
   "registrationClosedMessage": "Die Registrierung ist derzeit geschlossen. Schau bald wieder vorbei!",
   "accountCreatedCheckEmail": "Konto erstellt. Bestätige es über den Link in deiner E-Mail, bevor du dich anmeldest.",
   "fieldLabelName": "Name",
