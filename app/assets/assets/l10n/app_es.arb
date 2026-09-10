@@ -99,6 +99,8 @@
   "whatsappAction": "WhatsApp",
   "matchNoLongerOpen": "Esta partida ya no está abierta.",
   "errorExpressingInterest": "Error al expresar interés: {error}",
+  "interestSentMessage": "Se ha avisado a {name} de tu interés. Si confirma la partida, verás aquí su contacto.",
+  "viewContactButton": "Ver contacto",
   "errorLoadingOpenMatches": "Error al cargar partidas: {error}",
   "publishMatchTitle": "Publicar partida",
   "editMatchTitle": "Editar partida",

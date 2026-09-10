@@ -99,6 +99,8 @@
   "whatsappAction": "WhatsApp",
   "matchNoLongerOpen": "Diese Partie ist nicht mehr offen.",
   "errorExpressingInterest": "Fehler beim Zeigen von Interesse: {error}",
+  "interestSentMessage": "Wir haben {name} über dein Interesse informiert. Wenn die Partie bestätigt wird, siehst du hier den Kontakt.",
+  "viewContactButton": "Kontakt ansehen",
   "errorLoadingOpenMatches": "Fehler beim Laden der Partien: {error}",
   "publishMatchTitle": "Partie veröffentlichen",
   "editMatchTitle": "Partie bearbeiten",

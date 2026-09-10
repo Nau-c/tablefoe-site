@@ -99,6 +99,8 @@
   "whatsappAction": "WhatsApp",
   "matchNoLongerOpen": "This match is no longer open.",
   "errorExpressingInterest": "Error expressing interest: {error}",
+  "interestSentMessage": "We've let {name} know you're interested. If they confirm the match, you'll see their contact here.",
+  "viewContactButton": "View contact",
   "errorLoadingOpenMatches": "Error loading matches: {error}",
   "publishMatchTitle": "Publish match",
   "editMatchTitle": "Edit match",
