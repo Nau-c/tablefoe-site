@@ -12,8 +12,8 @@ importScripts('https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js
 importScripts('https://www.gstatic.com/firebasejs/10.13.2/firebase-messaging-compat.js');
 
 firebase.initializeApp({
-  apiKey: '',
-  appId: '',
+  apiKey: 'AIzaSyBhPA2qSLUOdp2AKGWmOLIPs4b1LHPLoJI',
+  appId: '1:352871363604:web:d99e047838edb70da66301',
   messagingSenderId: '352871363604',
   projectId: 'tablefoe',
   authDomain: 'tablefoe.firebaseapp.com',
