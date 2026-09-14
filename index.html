@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TableFoe — Encuentra rival, juega a juegos de miniaturas</title>
-<meta name="description" content="TableFoe conecta jugadores de wargames de miniaturas (Warhammer 40.000, Age of Sigmar, Kill Team, Infinity, Bolt Action y más) para encontrar rival cerca de ti, publicar partidas abiertas y quedar para jugar.">
+<meta name="description" content="TableFoe conecta jugadores de wargames de miniaturas y juegos de mesa competitivos (Warhammer 40.000, Age of Sigmar, Kill Team, Infinity, Bolt Action y más de 20 sistemas) para encontrar rival cerca de ti, publicar partidas abiertas y quedar para jugar.">
 <meta name="theme-color" content="#17151A">
 <link rel="canonical" href="https://tablefoe.app/">
 <link rel="alternate" hreflang="es" href="https://tablefoe.app/">
@@ -32,7 +32,7 @@
   "@type": "WebApplication",
   "name": "TableFoe",
   "url": "https://tablefoe.app/",
-  "description": "TableFoe conecta jugadores de wargames de miniaturas para encontrar rival cerca de ti, publicar partidas abiertas y quedar para jugar.",
+  "description": "TableFoe conecta jugadores de wargames de miniaturas y juegos de mesa competitivos para encontrar rival cerca de ti, publicar partidas abiertas y quedar para jugar.",
   "applicationCategory": "SocialNetworkingApplication",
   "operatingSystem": "Web, Android",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
@@ -58,6 +58,7 @@
     color: var(--text);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.5;
+    overflow-x: hidden;
   }
   main {
     max-width: 640px;
@@ -102,8 +103,27 @@
     border: 1px solid var(--accent);
   }
   .hero {
+    position: relative;
     text-align: center;
     padding: 56px 0 40px;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 520px;
+    height: 520px;
+    max-width: 160vw;
+    max-height: 160vw;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(201,162,39,0.18) 0%, rgba(201,162,39,0) 68%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero > * {
+    position: relative;
+    z-index: 1;
   }
   .hero h1 {
     font-family: 'Oswald', sans-serif;
@@ -119,21 +139,71 @@
     margin: 0 auto 28px;
     font-size: 1rem;
   }
-  .btn-cta {
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .btn-cta, .btn-secondary {
     display: inline-block;
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: 0.85rem;
-    background: var(--accent);
-    color: var(--bg);
     text-decoration: none;
     padding: 14px 28px;
     border-radius: 8px;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-cta {
+    background: var(--accent);
+    color: var(--bg);
   }
   .btn-cta:hover {
     background: var(--accent-light);
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { transition: none; opacity: 1; transform: none; }
+  }
+  .section {
+    margin: 0 0 48px;
+  }
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1rem;
+    color: var(--accent);
+    text-align: center;
+    margin: 0 0 14px;
+  }
+  .section-intro {
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto 20px;
+    font-size: 0.92rem;
   }
   .steps {
     list-style: none;
@@ -179,6 +249,7 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 24px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
   }
   .card h2 {
     font-family: 'Oswald', sans-serif;
@@ -200,6 +271,11 @@
     border-radius: 10px;
     padding: 14px 16px;
     text-align: left;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .match-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
   }
   .match-card .row {
     display: flex;
@@ -245,6 +321,135 @@
     color: var(--text-muted);
     margin: 14px 0 0;
   }
+  /* Listado de partidas (mockup) */
+  .list-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .list-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s ease;
+  }
+  .list-row:last-child {
+    border-bottom: none;
+  }
+  .list-row:hover {
+    background: rgba(201, 162, 39, 0.06);
+  }
+  .list-row .dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .list-row .info {
+    flex: 1;
+    min-width: 0;
+  }
+  .list-row .info .system {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 0.88rem;
+    color: var(--text);
+  }
+  .list-row .info .sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .list-row .dist {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  /* Puntuaciones del rival (mockup) */
+  .rating-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .rating-avatar {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--bg);
+    font-size: 1rem;
+  }
+  .rating-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .rating-stars {
+    color: var(--accent);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  .rating-count {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin-left: 4px;
+  }
+  .rating-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .rating-tags span {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 2px 9px;
+  }
+  /* Sistemas soportados */
+  .systems-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .systems-chips span {
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+  /* FAQ */
+  .faq-item {
+    max-width: 480px;
+    margin: 0 auto 18px;
+  }
+  .faq-item h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text);
+    margin: 0 0 4px;
+  }
+  .faq-item p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin: 0;
+  }
   .stores {
     display: flex;
     gap: 12px;
@@ -261,6 +466,9 @@
     font-weight: 500;
     padding: 10px 18px;
     border-radius: 8px;
+  }
+  .store.available {
+    border-color: var(--accent);
   }
   .store .badge {
     font-family: 'Oswald', sans-serif;
@@ -307,13 +515,18 @@
     <section class="hero">
       <h1>Construye tu lista. Encuentra rival.</h1>
       <p class="subtitle">
-        Publica tu partida de Warhammer, marca sistema, puntos y estilo de
-        juego, y deja que otros jugadores de tu zona se pongan en contacto
-        contigo para quedar.
+        Publica tu partida de wargames de miniaturas o de mesa —
+        Warhammer, Age of Sigmar, Infinity, Bolt Action y muchos más—,
+        marca sistema, puntos y estilo de juego, y deja que otros
+        jugadores de tu zona se pongan en contacto contigo para quedar.
       </p>
-      <a class="btn-cta" href="#vista-previa">Ver TableFoe</a>
+      <div class="btn-row">
+        <a class="btn-cta" href="app/">Abrir la app web</a>
+        <a class="btn-secondary" href="#vista-previa">Ver cómo funciona</a>
+      </div>
     </section>
-    <ol class="steps">
+
+    <ol class="steps reveal">
       <li>
         <span class="step-num">1</span>
         <p>Publica tu partida: sistema, puntos y estilo de juego.</p>
@@ -324,12 +537,25 @@
       </li>
       <li>
         <span class="step-num">3</span>
-        <p>Os ponéis en contacto y quedáis para jugar.</p>
+        <p>Os ponéis en contacto, quedáis para jugar y luego os puntuáis.</p>
       </li>
     </ol>
+
+    <section class="section reveal">
+      <h2 class="section-title">Qué es TableFoe</h2>
+      <p class="section-intro">
+        No es solo para Warhammer: TableFoe sirve para cualquier wargame
+        o juego de mesa competitivo. Muchos jugadores tienen ejército o
+        mazo listo y ganas de jugar, pero no siempre saben quién más
+        juega cerca. TableFoe conecta a esos jugadores con partidas
+        abiertas: publicas la tuya, cualquiera de tu zona puede mostrar
+        interés, y quedáis para jugar.
+      </p>
+    </section>
+
     <div class="cards" id="vista-previa">
-      <div class="card">
-        <h2>Así se ve una partida abierta</h2>
+      <div class="card reveal">
+        <h2>Partidas abiertas cerca de ti</h2>
         <div class="matches-preview">
           <div class="match-card">
             <div class="row">
@@ -358,18 +584,134 @@
         </div>
         <p class="preview-note">Ejemplo ilustrativo — así se organizan las partidas reales en TableFoe.</p>
       </div>
-      <div class="card">
-        <h2>Disponible pronto</h2>
+
+      <div class="card reveal">
+        <h2>El listado, de un vistazo</h2>
+        <div class="list-preview">
+          <div class="list-row">
+            <span class="dot"></span>
+            <div class="info">
+              <div class="system">Infinity the Game · 300 pts</div>
+              <div class="sub">Competitivo · Contacto: Discord</div>
+            </div>
+            <span class="dist">1,1 km</span>
+          </div>
+          <div class="list-row">
+            <span class="dot"></span>
+            <div class="info">
+              <div class="system">Bolt Action · 1000 pts</div>
+              <div class="sub">Narrativo · Contacto: WhatsApp</div>
+            </div>
+            <span class="dist">3,4 km</span>
+          </div>
+          <div class="list-row">
+            <span class="dot"></span>
+            <div class="info">
+              <div class="system">Necromunda</div>
+              <div class="sub">Casual · Contacto: email</div>
+            </div>
+            <span class="dist">6 km</span>
+          </div>
+        </div>
+        <p class="preview-note">Filtra por sistema y distancia — solo ves lo que te interesa.</p>
+      </div>
+
+      <div class="card reveal">
+        <h2>Puntúa a tu rival</h2>
+        <div class="rating-card">
+          <div class="rating-avatar">JM</div>
+          <div class="rating-body">
+            <div>
+              <span class="rating-stars">★★★★★</span>
+              <span class="rating-count">4.8 · 12 partidas</span>
+            </div>
+            <div class="rating-tags">
+              <span>Buen ambiente</span>
+              <span>Puntual</span>
+              <span>Jugó limpio</span>
+            </div>
+          </div>
+        </div>
+        <p class="preview-note">Después de cada partida, puntuáis la experiencia — ayuda a que la comunidad sea de fiar.</p>
+      </div>
+
+      <div class="card reveal">
+        <h2>Disponible ahora</h2>
         <div class="stores">
+          <span class="store available">
+            App web (PWA) <span class="badge">Disponible</span>
+          </span>
           <span class="store">
-            Google Play <span class="badge">Próximamente</span>
+            Google Play <span class="badge">Prueba cerrada</span>
           </span>
           <span class="store">
             App Store <span class="badge">Próximamente</span>
           </span>
         </div>
+        <p class="preview-note">
+          No hace falta esperar a la tienda: <a href="app/" style="color:var(--accent)">abre la app web</a>
+          desde cualquier navegador, en móvil u ordenador, y añádela a tu
+          pantalla de inicio como una app más.
+        </p>
       </div>
     </div>
+
+    <section class="section reveal">
+      <h2 class="section-title">Sistemas soportados</h2>
+      <p class="section-intro">
+        Warhammer 40.000 es solo el principio. TableFoe cubre wargames de
+        miniaturas, históricos y de mesa competitivos de todo tipo:
+      </p>
+      <div class="systems-chips">
+        <span>Horus Heresy (30k)</span>
+        <span>Age of Sigmar</span>
+        <span>Kill Team</span>
+        <span>Warcry</span>
+        <span>Necromunda</span>
+        <span>Blood Bowl</span>
+        <span>Warhammer Underworlds</span>
+        <span>Adeptus Titanicus</span>
+        <span>Warhammer: The Old World</span>
+        <span>Middle-earth SBG</span>
+        <span>Grimdark Future (OPR)</span>
+        <span>Infinity the Game</span>
+        <span>Bolt Action</span>
+        <span>Flames of War</span>
+        <span>Star Wars: Legion</span>
+        <span>Marvel Crisis Protocol</span>
+        <span>Warmachine / Hordes</span>
+        <span>Kings of War</span>
+        <span>Malifaux</span>
+        <span>SAGA</span>
+        <span>Battletech</span>
+        <span>A Song of Ice and Fire</span>
+        <span>y más...</span>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <div class="faq-item">
+        <h3>¿Solo sirve para Warhammer?</h3>
+        <p>No. Cualquier wargame o juego de mesa competitivo vale — el sistema lo eliges tú al publicar o buscar partida.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Necesito instalar algo?</h3>
+        <p>No. TableFoe funciona directamente en el navegador (es una PWA) — pulsa "Abrir la app web" arriba. Si quieres, tu navegador te deja añadirla a la pantalla de inicio como una app nativa más.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cuánto cuesta?</h3>
+        <p>La app web es gratuita. La versión de Android está en prueba cerrada, preparando el lanzamiento en Google Play.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Necesito compartir mi ubicación exacta?</h3>
+        <p>No. Se usa solo para filtrar partidas por distancia; el contacto que compartes (email, Discord, teléfono...) lo decides tú al publicar o mostrar interés, no antes.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Quién puede ver mis datos?</h3>
+        <p>Consulta la <a href="privacy.html" style="color:var(--accent)">política de privacidad</a> para el detalle completo.</p>
+      </div>
+    </section>
   </main>
   <footer>
     <nav>
@@ -380,5 +722,26 @@
     </nav>
     <p class="copyright">© 2026 TableFoe</p>
   </footer>
+  <script>
+    (function () {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('visible');
+        });
+        return;
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
 </body>
 </html>
