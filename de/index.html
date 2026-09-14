@@ -3,8 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TableFoe — Finde einen Gegner, spiele Warhammer</title>
-<meta name="description" content="TableFoe verbindet Warhammer-Spieler, damit du in deiner Nähe einen Gegner findest, offene Partien veröffentlichst und dich zum Spielen triffst.">
+<title>TableFoe — Finde einen Gegner, spiele Tabletop-Wargames</title>
+<meta name="description" content="TableFoe verbindet Tabletop-Wargame-Spieler (Warhammer 40.000, Age of Sigmar, Kill Team, Infinity, Bolt Action und mehr), damit du in deiner Nähe einen Gegner findest, offene Partien veröffentlichst und dich zum Spielen triffst.">
+<meta name="theme-color" content="#17151A">
+<link rel="canonical" href="https://tablefoe.app/de/">
+<link rel="alternate" hreflang="es" href="https://tablefoe.app/">
+<link rel="alternate" hreflang="en" href="https://tablefoe.app/en/">
+<link rel="alternate" hreflang="de" href="https://tablefoe.app/de/">
+<link rel="alternate" hreflang="x-default" href="https://tablefoe.app/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TableFoe">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://tablefoe.app/de/">
+<meta property="og:title" content="TableFoe — Finde einen Gegner, spiele Tabletop-Wargames">
+<meta property="og:description" content="Veröffentliche oder finde offene Partien von Warhammer 40.000, Age of Sigmar, Kill Team, Infinity und über 20 weiteren Systemen, gefiltert nach System und Entfernung.">
+<meta property="og:image" content="https://tablefoe.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TableFoe — Finde einen Gegner, spiele Tabletop-Wargames">
+<meta name="twitter:description" content="Veröffentliche oder finde offene Tabletop-Wargame-Partien in deiner Nähe.">
+<meta name="twitter:image" content="https://tablefoe.app/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "TableFoe",
+  "url": "https://tablefoe.app/de/",
+  "description": "TableFoe verbindet Tabletop-Wargame-Spieler, damit du in deiner Nähe einen Gegner findest, offene Partien veröffentlichst und dich zum Spielen triffst.",
+  "applicationCategory": "SocialNetworkingApplication",
+  "operatingSystem": "Web, Android",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -156,24 +187,61 @@
     color: var(--text-muted);
     margin: 0 0 18px;
   }
-  .screenshots {
-    display: flex;
+  .matches-preview {
+    display: grid;
     gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
-  .screenshot-placeholder {
-    width: 100px;
-    aspect-ratio: 9 / 19;
-    border: 1px dashed var(--border);
-    border-radius: 14px;
+  .match-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: left;
+  }
+  .match-card .row {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .match-card .system {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+  .match-card .points {
+    font-size: 0.72rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+  .match-card .meta {
+    margin-top: 8px;
+    font-size: 0.75rem;
     color: var(--text-muted);
+  }
+  .match-card .status {
+    margin-top: 10px;
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
     font-size: 0.65rem;
-    padding: 8px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+    color: var(--accent);
+    background: rgba(201, 162, 39, 0.12);
+  }
+  .preview-note {
     text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 14px 0 0;
   }
   .stores {
     display: flex;
@@ -259,12 +327,34 @@
     </ol>
     <div class="cards" id="vorschau">
       <div class="card">
-        <h2>So sieht TableFoe aus</h2>
-        <div class="screenshots">
-          <div class="screenshot-placeholder">Screenshot folgt</div>
-          <div class="screenshot-placeholder">Screenshot folgt</div>
-          <div class="screenshot-placeholder">Screenshot folgt</div>
+        <h2>So sieht eine offene Partie aus</h2>
+        <div class="matches-preview">
+          <div class="match-card">
+            <div class="row">
+              <span class="system">Warhammer 40.000</span>
+              <span class="points">2000 Pkt.</span>
+            </div>
+            <p class="meta">📍 2,3 km · Sa 18:00</p>
+            <span class="status">Offen</span>
+          </div>
+          <div class="match-card">
+            <div class="row">
+              <span class="system">Age of Sigmar</span>
+              <span class="points">1500 Pkt.</span>
+            </div>
+            <p class="meta">📍 5 km · So 11:00</p>
+            <span class="status">Offen</span>
+          </div>
+          <div class="match-card">
+            <div class="row">
+              <span class="system">Kill Team</span>
+              <span class="points">100 Pkt.</span>
+            </div>
+            <p class="meta">📍 800 m · Heute 20:00</p>
+            <span class="status">Kontaktiert</span>
+          </div>
         </div>
+        <p class="preview-note">Beispielhafte Darstellung — so werden echte Partien in TableFoe organisiert.</p>
       </div>
       <div class="card">
         <h2>Demnächst verfügbar</h2>
