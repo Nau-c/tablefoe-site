@@ -131,8 +131,10 @@
   "armyNameLabel": "Army or warband (optional)",
   "armyNameHint": "E.g.: Space Marines, Orks, Death Guard...",
   "armyListLabel": "List (plain text, optional)",
-  "armyListHint": "Paste your army list here...",
+  "armyListHint": "Paste your list, or a link to it (New Recruit, BCP...)",
   "armyListVisibilityNote": "The list is visible to everyone who sees the match.",
+  "armyListLinkLabel": "View list on {platform}",
+  "armyListLinkGenericLabel": "View list",
   "invalidPointsMessage": "Enter a valid number of points.",
   "locationRequiredMessage": "Tell us where you'll play (store, club, address...).",
   "dateTimeRequiredMessage": "Pick a day and time for the match.",
@@ -191,5 +193,16 @@
   "deleteAccountButton": "Delete account",
   "deleteAccountDialogTitle": "Delete account",
   "deleteAccountDialogContent": "Your profile, published matches, and ratings will be deleted. This action cannot be undone.",
-  "deleteAccountError": "Couldn't delete the account. Please try again."
+  "deleteAccountError": "Couldn't delete the account. Please try again.",
+
+  "clubsTitle": "Clubs and stores",
+  "noClubsYet": "No clubs added yet. Be the first!",
+  "addClubButton": "Add club",
+  "addClubTitle": "Add club or store",
+  "clubNameLabel": "Name",
+  "clubNameHint": "Name of the club or store",
+  "clubAddressLabel": "Address",
+  "clubAddressHint": "Street, city...",
+  "clubUnverifiedBadge": "Unverified",
+  "clubSavedMessage": "Club added."
 }

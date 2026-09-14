@@ -131,8 +131,10 @@
   "armyNameLabel": "Ejército o banda (opcional)",
   "armyNameHint": "Ej: Space Marines, Orks, Death Guard...",
   "armyListLabel": "Lista (texto plano, opcional)",
-  "armyListHint": "Pega aquí tu lista de ejército...",
+  "armyListHint": "Pega aquí tu lista, o el enlace a ella (New Recruit, BCP...)",
   "armyListVisibilityNote": "La lista es visible para todos los que vean la partida.",
+  "armyListLinkLabel": "Ver lista en {platform}",
+  "armyListLinkGenericLabel": "Ver lista",
   "invalidPointsMessage": "Pon un número de puntos válido.",
   "locationRequiredMessage": "Dinos dónde se juega (tienda, club, dirección...).",
   "dateTimeRequiredMessage": "Elige día y hora para la partida.",
@@ -191,5 +193,16 @@
   "deleteAccountButton": "Eliminar cuenta",
   "deleteAccountDialogTitle": "Eliminar cuenta",
   "deleteAccountDialogContent": "Se borrará tu perfil, tus partidas publicadas y tus valoraciones. Esta acción no se puede deshacer.",
-  "deleteAccountError": "No se pudo eliminar la cuenta. Inténtalo de nuevo."
+  "deleteAccountError": "No se pudo eliminar la cuenta. Inténtalo de nuevo.",
+
+  "clubsTitle": "Clubs y tiendas",
+  "noClubsYet": "Todavía no hay clubs añadidos. ¡Sé el primero!",
+  "addClubButton": "Añadir club",
+  "addClubTitle": "Añadir club o tienda",
+  "clubNameLabel": "Nombre",
+  "clubNameHint": "Nombre del club o tienda",
+  "clubAddressLabel": "Dirección",
+  "clubAddressHint": "Calle, ciudad...",
+  "clubUnverifiedBadge": "Sin verificar",
+  "clubSavedMessage": "Club añadido."
 }
