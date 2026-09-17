@@ -672,14 +672,24 @@
         </p>
       </div>
 
+      <!--
+        AdSense (ca-pub-8104332368462892 / slot 4022271916) is still under
+        review and isn't serving ads yet, so we use Adsterra as a bridge
+        network (near-instant approval) to avoid leaving an empty gap —
+        same approach as the PWA (war_table@c064098). Once Google approves
+        the account, restore this block and remove the Adsterra one below.
+        <div class="ad-slot">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-8104332368462892"
+               data-ad-slot="4022271916"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+      -->
       <div class="ad-slot">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-8104332368462892"
-             data-ad-slot="4022271916"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <script src="/adsterra-config.js"></script>
       </div>
     </div>
 
