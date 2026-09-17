@@ -114,6 +114,7 @@
   "locationFilterHint": "Filter by store or area...",
   "nearbyFilterLabel": "Near me",
   "locationPermissionDenied": "Could not get your location. Check the app permissions.",
+  "onlineFilterLabel": "Online only",
   "clearAction": "Clear",
   "applyAction": "Apply",
 
@@ -122,6 +123,7 @@
   "desiredPlaystyleLabel": "Desired playstyle (optional)",
   "whereLabel": "Where you'll play",
   "whereHint": "Store, club or address",
+  "isOnlineLabel": "This match is online",
   "whenLabel": "When",
   "pickDateTime": "Pick a day and time",
   "addAlternativeSlotButton": "Add another time slot",

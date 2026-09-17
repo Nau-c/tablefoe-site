@@ -114,6 +114,7 @@
   "locationFilterHint": "Filtra por tienda o zona...",
   "nearbyFilterLabel": "Cerca de mí",
   "locationPermissionDenied": "No se pudo obtener tu ubicación. Revisa los permisos de la app.",
+  "onlineFilterLabel": "Solo online",
   "clearAction": "Limpiar",
   "applyAction": "Aplicar",
 
@@ -122,6 +123,7 @@
   "desiredPlaystyleLabel": "Estilo de juego buscado (opcional)",
   "whereLabel": "Dónde se juega",
   "whereHint": "Tienda, club o dirección",
+  "isOnlineLabel": "Esta partida es online",
   "whenLabel": "Cuándo",
   "pickDateTime": "Elige día y hora",
   "addAlternativeSlotButton": "Añadir otra franja horaria",
