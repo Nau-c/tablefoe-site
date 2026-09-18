@@ -115,19 +115,43 @@
     text-align: center;
     padding: 56px 0 40px;
   }
-  .hero::before {
+  .hero::before, .hero::after {
     content: "";
     position: absolute;
-    top: 10%;
-    left: 50%;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+  }
+  .hero::before {
+    top: 4%;
+    left: calc(50% - 260px);
     width: 520px;
     height: 520px;
     max-width: 160vw;
     max-height: 160vw;
-    transform: translateX(-50%);
-    background: radial-gradient(circle, rgba(201,162,39,0.18) 0%, rgba(201,162,39,0) 68%);
-    pointer-events: none;
-    z-index: 0;
+    background: radial-gradient(circle, rgba(201,162,39,0.20) 0%, rgba(201,162,39,0) 68%);
+    animation: heroBlobA 16s ease-in-out infinite;
+  }
+  .hero::after {
+    top: 22%;
+    left: calc(50% - 420px);
+    width: 300px;
+    height: 300px;
+    max-width: 120vw;
+    max-height: 120vw;
+    background: radial-gradient(circle, rgba(227,194,92,0.16) 0%, rgba(227,194,92,0) 70%);
+    animation: heroBlobB 13s ease-in-out infinite;
+  }
+  @keyframes heroBlobA {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, 20px) scale(1.1); }
+  }
+  @keyframes heroBlobB {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-24px, 16px) scale(0.9); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero::before, .hero::after { animation: none; }
   }
   .hero > * {
     position: relative;
@@ -175,6 +199,62 @@
     margin: 0 auto 28px;
     font-size: 1rem;
   }
+  .accent-grad {
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 50%, var(--accent) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 4s linear infinite;
+  }
+  @keyframes shimmer {
+    to { background-position: -200% center; }
+  }
+  @supports not ((background-clip: text) or (-webkit-background-clip: text)) {
+    .accent-grad { background: none; color: var(--accent); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .accent-grad { animation: none; }
+  }
+  .marquee {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+    margin: 4px 0 44px;
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 24px;
+    animation: marqueeScroll 34s linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  .marquee-track span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .marquee-track span.dot {
+    color: var(--accent);
+  }
+  @keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+    .marquee { overflow-x: auto; }
+  }
   .btn-row {
     display: flex;
     flex-wrap: wrap;
@@ -194,12 +274,42 @@
     transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
   }
   .btn-cta {
+    position: relative;
+    overflow: hidden;
     background: var(--accent);
     color: var(--bg);
   }
   .btn-cta:hover {
     background: var(--accent-light);
     transform: translateY(-1px);
+  }
+  .btn-cta::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-20deg);
+  }
+  .btn-cta:hover::after {
+    animation: ctaShine 0.9s ease;
+  }
+  @keyframes ctaShine {
+    from { left: -60%; }
+    to { left: 130%; }
+  }
+  .hero .btn-cta {
+    animation: ctaPulse 2.6s ease-in-out infinite;
+  }
+  @keyframes ctaPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.35); }
+    50% { box-shadow: 0 0 0 9px rgba(201, 162, 39, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero .btn-cta { animation: none; }
+    .btn-cta:hover::after { animation: none; }
   }
   .btn-secondary {
     color: var(--text);
@@ -299,6 +409,9 @@
   .cards .card:nth-child(3) { transition-delay: 0.12s; }
   .cards .card:nth-child(4) { transition-delay: 0.18s; }
   .card h2 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
     text-transform: uppercase;
@@ -306,6 +419,10 @@
     font-size: 0.8rem;
     color: var(--text-muted);
     margin: 0 0 18px;
+  }
+  .card-icon {
+    display: inline-flex;
+    flex-shrink: 0;
   }
   .matches-preview {
     display: grid;
@@ -583,7 +700,7 @@
       <svg class="hero-motif motif-1" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M20 3 L35 11 L35 29 L20 37 L5 29 L5 11 Z" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round"/><circle cx="20" cy="20" r="1.9" fill="var(--accent)"/></svg>
       <svg class="hero-motif motif-2" width="20" height="20" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M20 3 L35 11 L35 29 L20 37 L5 29 L5 11 Z" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round"/><circle cx="20" cy="20" r="1.9" fill="var(--accent)"/></svg>
       <svg class="hero-motif motif-3" width="16" height="16" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M20 3 L35 11 L35 29 L20 37 L5 29 L5 11 Z" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round"/><circle cx="20" cy="20" r="1.9" fill="var(--accent)"/></svg>
-      <h1>Finde einen Gegner. Spiel.</h1>
+      <h1>Finde einen Gegner. <span class="accent-grad">Spiel.</span></h1>
       <p class="subtitle">
         Veröffentliche deine Tabletop-Partie, egal was du spielst — gib
         System, Punkte und Spielstil an, und lass andere Spieler aus
@@ -594,6 +711,13 @@
         <a class="btn-secondary" href="#vorschau">So funktioniert's</a>
       </div>
     </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Warhammer 40.000</span><span class="dot">•</span><span>Horus Heresy (30k)</span><span class="dot">•</span><span>Age of Sigmar</span><span class="dot">•</span><span>Kill Team</span><span class="dot">•</span><span>Warcry</span><span class="dot">•</span><span>Necromunda</span><span class="dot">•</span><span>Blood Bowl</span><span class="dot">•</span><span>Infinity the Game</span><span class="dot">•</span><span>Bolt Action</span><span class="dot">•</span><span>Flames of War</span><span class="dot">•</span><span>Star Wars: Legion</span><span class="dot">•</span><span>Kings of War</span><span class="dot">•</span><span>Malifaux</span><span class="dot">•</span><span>SAGA</span><span class="dot">•</span><span>Battletech</span><span class="dot">•</span>
+        <span>Warhammer 40.000</span><span class="dot">•</span><span>Horus Heresy (30k)</span><span class="dot">•</span><span>Age of Sigmar</span><span class="dot">•</span><span>Kill Team</span><span class="dot">•</span><span>Warcry</span><span class="dot">•</span><span>Necromunda</span><span class="dot">•</span><span>Blood Bowl</span><span class="dot">•</span><span>Infinity the Game</span><span class="dot">•</span><span>Bolt Action</span><span class="dot">•</span><span>Flames of War</span><span class="dot">•</span><span>Star Wars: Legion</span><span class="dot">•</span><span>Kings of War</span><span class="dot">•</span><span>Malifaux</span><span class="dot">•</span><span>SAGA</span><span class="dot">•</span><span>Battletech</span><span class="dot">•</span>
+      </div>
+    </div>
 
     <ol class="steps">
       <li class="reveal">
@@ -629,7 +753,7 @@
 
     <div class="cards" id="vorschau">
       <div class="card reveal">
-        <h2>Offene Partien in deiner Nähe</h2>
+        <h2><span class="card-icon"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="var(--accent)" stroke-width="1.6"/><circle cx="12" cy="12" r="2.4" fill="var(--accent)"/></svg></span>Offene Partien in deiner Nähe</h2>
         <div class="matches-preview">
           <div class="match-card">
             <div class="row">
@@ -660,7 +784,7 @@
       </div>
 
       <div class="card reveal">
-        <h2>Die Liste auf einen Blick</h2>
+        <h2><span class="card-icon"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/><line x1="4" y1="18" x2="20" y2="18" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/></svg></span>Die Liste auf einen Blick</h2>
         <div class="list-preview">
           <div class="list-row">
             <span class="dot"></span>
@@ -691,7 +815,7 @@
       </div>
 
       <div class="card reveal">
-        <h2>Bewerte deinen Gegner</h2>
+        <h2><span class="card-icon"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><polygon points="12,3 14.7,9.2 21.5,9.8 16.3,14.2 17.9,21 12,17.3 6.1,21 7.7,14.2 2.5,9.8 9.3,9.2" fill="var(--accent)"/></svg></span>Bewerte deinen Gegner</h2>
         <div class="ratings-grid">
           <div class="rating-card">
             <div class="rating-avatar">JM</div>
@@ -725,7 +849,7 @@
       </div>
 
       <div class="card reveal">
-        <h2>Jetzt verfügbar</h2>
+        <h2><span class="card-icon"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3 L20 7.5 L20 16.5 L12 21 L4 16.5 L4 7.5 Z" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12 L11 14.5 L16 9" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Jetzt verfügbar</h2>
         <div class="stores">
           <span class="store available">
             Web-App (PWA) <span class="badge">Verfügbar</span>
@@ -855,6 +979,22 @@
       }, { threshold: 0.15 });
       document.querySelectorAll('.reveal').forEach(function (el) {
         observer.observe(el);
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      document.querySelectorAll('.card').forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+          var r = card.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transform = 'perspective(700px) rotateX(' + (-y * 6) + 'deg) rotateY(' + (x * 6) + 'deg) translateY(-2px)';
+        });
+        card.addEventListener('mouseleave', function () {
+          card.style.transform = '';
+        });
       });
     })();
   </script>
