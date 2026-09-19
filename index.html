@@ -678,6 +678,79 @@
     font-size: 0.8rem;
     margin: 8px 0 0;
   }
+  .avail-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 18px auto 0;
+    padding: 6px 14px;
+    max-width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .avail-badge strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .benefit-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+    color: var(--text);
+  }
+  .benefit-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .check-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text);
+  }
+  .check-list li::before {
+    content: "✓";
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .install-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .install-card ol {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .install-card ol li::marker {
+    color: var(--accent);
+    font-family: 'Oswald', sans-serif;
+  }
 </style>
 </head>
 <body>
@@ -715,6 +788,7 @@
         <a class="btn-cta" href="app/">Abrir la app web</a>
         <a class="btn-secondary" href="#vista-previa">Ver cómo funciona</a>
       </div>
+      <p class="avail-badge">🌍 Disponible en todo el mundo · <strong>Gratis, desde el navegador, sin descargar nada</strong></p>
     </section>
 
     <div class="marquee" aria-hidden="true">
@@ -893,6 +967,80 @@
         <script src="/adsterra-config.js"></script>
       </div>
     </div>
+
+    <section class="section reveal">
+      <h2 class="section-title">Diseñado para la comunidad</h2>
+      <p class="section-intro">
+        TableFoe resuelve los problemas de siempre a la hora de organizar
+        una partida.
+      </p>
+      <div class="benefits">
+        <div class="card benefit-card reveal">
+          <h3>Se acabó buscar en el vacío</h3>
+          <p>
+            Configura tu perfil con tus sistemas de juego favoritos. Publicas
+            o filtras partidas por sistema y distancia, y el listado solo te
+            enseña lo que te encaja.
+          </p>
+          <ul class="check-list">
+            <li>Filtro automático por sistema</li>
+            <li>Partidas ordenadas por cercanía</li>
+          </ul>
+        </div>
+        <div class="card benefit-card reveal">
+          <h3>Pachanga o torneo. Tú decides.</h3>
+          <p>
+            Marca el estilo de tu partida —casual, narrativa o
+            competitiva— y el formato —amistosa o torneo. Sabrás de
+            antemano qué busca tu rival, sin sorpresas en la mesa.
+          </p>
+          <ul class="check-list">
+            <li>Expectativas claras antes de quedar</li>
+            <li>Etiquetas de estilo de juego</li>
+          </ul>
+        </div>
+        <div class="card benefit-card reveal">
+          <h3>Orden en el caos de WhatsApp</h3>
+          <p>
+            ¿Cansado de que tu propuesta de partida se pierda entre 200
+            mensajes? Publica un duelo en TableFoe y compártelo con un
+            enlace claro que se lee de un vistazo.
+          </p>
+          <ul class="check-list">
+            <li>Un enlace por partida</li>
+            <li>Nada de rebuscar en el chat</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2 class="section-title">Llévala a la pantalla de inicio</h2>
+      <p class="section-intro">
+        TableFoe se instala desde el navegador, en dos toques y sin pasar
+        por ninguna tienda. Ocupa menos que una foto y se actualiza sola.
+      </p>
+      <div class="install-grid">
+        <div class="card install-card reveal">
+          <h2>En Android</h2>
+          <ol>
+            <li>Abre <strong>tablefoe.app</strong> en Chrome.</li>
+            <li>Suele salir solo un aviso de «Instalar aplicación». Tócalo y listo.</li>
+            <li>Si no sale: menú ⋮ arriba a la derecha → Añadir a pantalla de inicio.</li>
+          </ol>
+          <p class="preview-note">Se abre a pantalla completa, sin barra del navegador, y puede avisarte cuando alguien quiera jugar contigo.</p>
+        </div>
+        <div class="card install-card reveal">
+          <h2>En iPhone</h2>
+          <ol>
+            <li>Abre <strong>tablefoe.app</strong> en Safari.</li>
+            <li>Toca el botón Compartir (el cuadrado con la flecha hacia arriba, abajo en el centro).</li>
+            <li>Baja y elige «Añadir a inicio» → Añadir.</li>
+          </ol>
+          <p class="preview-note">Tiene que ser Safari: desde Chrome en iPhone la opción no aparece. Y en iPhone los avisos solo llegan si la instalas así.</p>
+        </div>
+      </div>
+    </section>
 
     <section class="section reveal">
       <h2 class="section-title">Sistemas soportados</h2>
