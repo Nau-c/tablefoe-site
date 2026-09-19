@@ -821,6 +821,128 @@
     color: var(--text);
     border-color: var(--accent);
   }
+  .live-banner {
+    position: relative;
+    margin: 0 0 44px;
+    padding: 22px 20px 20px;
+    border: 1px solid var(--accent);
+    border-radius: 14px;
+    background: linear-gradient(160deg, rgba(201,162,39,0.08), transparent 60%);
+  }
+  .live-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .live-dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    background: #E5484D;
+    animation: liveDotBlink 1.4s ease-in-out infinite;
+  }
+  @keyframes liveDotBlink {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(229, 72, 77, 0.5); }
+    50% { opacity: 0.4; box-shadow: 0 0 0 5px rgba(229, 72, 77, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .live-dot { animation: none; }
+  }
+  .live-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E5484D;
+  }
+  .live-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin: 0 0 4px;
+  }
+  .live-sub {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0 0 16px;
+  }
+  .live-stats {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .live-stat {
+    flex: 1;
+    text-align: center;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 4px;
+  }
+  .live-num {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--accent);
+  }
+  .live-stat-label {
+    font-size: 0.66rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .live-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .live-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 6px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+  .live-row:last-child {
+    border-bottom: none;
+  }
+  .live-day {
+    font-family: 'Oswald', sans-serif;
+    color: var(--accent);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    min-width: 56px;
+  }
+  .live-system {
+    color: var(--text);
+    font-weight: 500;
+    flex: 1;
+    min-width: 0;
+  }
+  .live-loc {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+  .live-empty {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0 0 16px;
+  }
+  .live-cta {
+    display: inline-block;
+    font-size: 0.78rem;
+    padding: 8px 16px;
+  }
 </style>
 </head>
 <body>
@@ -858,6 +980,24 @@
         <a class="btn-secondary" href="#preview">See how it works</a>
       </div>
       <p class="avail-badge">🌍 Available worldwide · <strong>Free, straight from your browser, nothing to download</strong></p>
+    </section>
+
+    <section class="live-banner" id="live-banner" hidden aria-live="polite">
+      <div class="live-header">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span class="live-label">Live</span>
+      </div>
+      <h2 class="live-title">Right now on TableFoe</h2>
+      <p class="live-sub">This isn't a mockup: these are the matches open right now.</p>
+      <div class="live-stats">
+        <div class="live-stat"><span class="live-num" id="live-systems">–</span><span class="live-stat-label">systems</span></div>
+        <div class="live-stat"><span class="live-num" id="live-open">–</span><span class="live-stat-label">open matches</span></div>
+        <div class="live-stat"><span class="live-num" id="live-cities">–</span><span class="live-stat-label">cities</span></div>
+      </div>
+      <ul class="live-list" id="live-list"></ul>
+      <p class="live-empty" id="live-empty" hidden>Your area is quiet right now — be the first to post a match.</p>
+      <a class="btn-secondary live-cta" href="../app/">See all open matches →</a>
+      <p class="preview-note">Visible without signing up.</p>
     </section>
 
     <div class="marquee" aria-hidden="true">
@@ -1294,6 +1434,73 @@
             show();
           });
         }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var SUPABASE_URL = 'https://wlpuxvhpvxgaypphxrev.supabase.co';
+      // TODO: replace with the real "anon public" key (Supabase → Settings → API).
+      var SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+
+      function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+      function rpc(fn, params) {
+        return fetch(SUPABASE_URL + '/rest/v1/rpc/' + fn, {
+          method: 'POST',
+          headers: {
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: 'Bearer ' + SUPABASE_ANON_KEY,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(params || {})
+        }).then(function (r) {
+          if (!r.ok) throw new Error('http ' + r.status);
+          return r.json();
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        if (SUPABASE_ANON_KEY.indexOf('YOUR_') === 0) return;
+        var section = document.getElementById('live-banner');
+        if (!section) return;
+
+        Promise.all([
+          rpc('public_open_matches_stats'),
+          rpc('public_open_matches_preview', { p_limit: 5 })
+        ]).then(function (results) {
+          var stats = results[0] || {};
+          var list = results[1] || [];
+
+          document.getElementById('live-systems').textContent = stats.systems_count || 0;
+          document.getElementById('live-open').textContent = stats.open_matches_count || 0;
+          document.getElementById('live-cities').textContent = stats.locations_count || 0;
+
+          var listEl = document.getElementById('live-list');
+          var emptyEl = document.getElementById('live-empty');
+          if (!list.length) {
+            emptyEl.hidden = false;
+          } else {
+            listEl.innerHTML = list.map(function (m) {
+              var d = new Date(m.scheduled_at);
+              var day = d.toLocaleDateString('en-GB', { weekday: 'short' });
+              var date = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+              var time = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+              return '<li class="live-row">' +
+                '<span class="live-day">' + escapeHtml(day) + ' ' + escapeHtml(date) + '</span>' +
+                '<span class="live-system">' + escapeHtml(m.game_system) + '</span>' +
+                '<span class="live-loc">' + escapeHtml(m.location) + ' · ' + escapeHtml(time) + '</span>' +
+                '</li>';
+            }).join('');
+          }
+          section.hidden = false;
+        }).catch(function () {
+          // If the call fails (or the key isn't set yet), keep the section
+          // hidden instead of showing dashes or a visible error.
+        });
       });
     })();
   </script>
