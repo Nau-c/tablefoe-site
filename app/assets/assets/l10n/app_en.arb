@@ -87,6 +87,9 @@
   "statusPlayed": "Played",
   "statusCancelled": "Cancelled",
   "alreadyPlayedButton": "Already played",
+  "myMatchesFilterAll": "All",
+  "myMatchesFilterCreated": "Created by me",
+  "myMatchesFilterJoined": "I'm joining",
 
   "allGames": "All",
   "filtersTooltip": "Filters",
