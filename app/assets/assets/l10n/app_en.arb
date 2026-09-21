@@ -90,6 +90,11 @@
   "myMatchesFilterAll": "All",
   "myMatchesFilterCreated": "Created by me",
   "myMatchesFilterJoined": "I'm joining",
+  "requestRescheduleButton": "Something came up",
+  "requestRescheduleDialogTitle": "Report an unexpected conflict?",
+  "requestRescheduleDialogContent": "The other person will be notified that you need to move the day or time of this match.",
+  "rescheduleRequestedByMe": "You reported a conflict. Waiting for you both to agree on a new day/time.",
+  "rescheduleRequestedByOther": "{name} has a conflict and needs to move the match. Get in touch to agree on a new day/time.",
 
   "allGames": "All",
   "filtersTooltip": "Filters",

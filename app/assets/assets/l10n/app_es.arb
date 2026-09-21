@@ -90,6 +90,11 @@
   "myMatchesFilterAll": "Todas",
   "myMatchesFilterCreated": "Creadas por mí",
   "myMatchesFilterJoined": "Donde participo",
+  "requestRescheduleButton": "Imprevisto",
+  "requestRescheduleDialogTitle": "¿Avisar de un imprevisto?",
+  "requestRescheduleDialogContent": "Se notificará a la otra persona de que necesitas mover el día u hora de esta partida.",
+  "rescheduleRequestedByMe": "Has avisado de un imprevisto. Esperando a que acordéis un nuevo día/hora.",
+  "rescheduleRequestedByOther": "{name} tiene un imprevisto y necesita mover la partida. Contactad para acordar un nuevo día/hora.",
 
   "allGames": "Todas",
   "filtersTooltip": "Filtros",

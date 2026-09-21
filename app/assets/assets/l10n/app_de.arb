@@ -90,6 +90,11 @@
   "myMatchesFilterAll": "Alle",
   "myMatchesFilterCreated": "Von mir erstellt",
   "myMatchesFilterJoined": "Ich nehme teil",
+  "requestRescheduleButton": "Terminkonflikt",
+  "requestRescheduleDialogTitle": "Terminkonflikt melden?",
+  "requestRescheduleDialogContent": "Die andere Person wird benachrichtigt, dass du Tag oder Uhrzeit dieser Partie verschieben musst.",
+  "rescheduleRequestedByMe": "Du hast einen Terminkonflikt gemeldet. Wartet darauf, euch auf einen neuen Termin zu einigen.",
+  "rescheduleRequestedByOther": "{name} hat einen Terminkonflikt und muss die Partie verschieben. Sprecht euch ab, um einen neuen Termin zu finden.",
 
   "allGames": "Alle",
   "filtersTooltip": "Filter",
