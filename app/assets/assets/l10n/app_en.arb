@@ -54,6 +54,7 @@
   "alertsUseCurrentLocationLabel": "Use my current location",
   "alertsCurrentLocationLabel": "Your current location",
   "alertsLocationUnavailableMessage": "We couldn't get your location. Check the location permission in your browser/app.",
+  "alertsSaveError": "Couldn't save your alerts. Please try again.",
   "historyTitle": "History",
   "noMatchesPlayedYet": "You haven't played any matches yet.",
   "matchesPlayedLabel": "Matches played",

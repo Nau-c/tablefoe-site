@@ -54,6 +54,7 @@
   "alertsUseCurrentLocationLabel": "Meinen aktuellen Standort verwenden",
   "alertsCurrentLocationLabel": "Dein aktueller Standort",
   "alertsLocationUnavailableMessage": "Wir konnten deinen Standort nicht ermitteln. Prüfe die Standortberechtigung in Browser/App.",
+  "alertsSaveError": "Die Benachrichtigungen konnten nicht gespeichert werden. Bitte versuche es erneut.",
   "historyTitle": "Verlauf",
   "noMatchesPlayedYet": "Du hast noch keine Partien gespielt.",
   "matchesPlayedLabel": "Gespielte Partien",

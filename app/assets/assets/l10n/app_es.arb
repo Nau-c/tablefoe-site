@@ -54,6 +54,7 @@
   "alertsUseCurrentLocationLabel": "Usar mi ubicación actual",
   "alertsCurrentLocationLabel": "Tu ubicación actual",
   "alertsLocationUnavailableMessage": "No hemos podido obtener tu ubicación. Revisa el permiso de ubicación del navegador/app.",
+  "alertsSaveError": "No se pudieron guardar los avisos. Inténtalo de nuevo.",
   "historyTitle": "Historial",
   "noMatchesPlayedYet": "Todavía no tienes partidas jugadas.",
   "matchesPlayedLabel": "Partidas jugadas",
