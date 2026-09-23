@@ -249,5 +249,22 @@
   "clubAddressLabel": "Adresse",
   "clubAddressHint": "Straße, Stadt...",
   "clubUnverifiedBadge": "Nicht verifiziert",
-  "clubSavedMessage": "Club hinzugefügt."
+  "clubSavedMessage": "Club hinzugefügt.",
+  "clubScheduleTitle": "Öffnungszeiten & Kapazität",
+  "clubScheduleOpensAt": "Öffnet um",
+  "clubScheduleClosesAt": "Schließt um",
+  "clubCapacityLabel": "Partien gleichzeitig (Tische)",
+  "clubCapacityHint": "Kein Limit",
+  "clubCapacityHelperText": "Jede Partie belegt einen Tisch für {hours} Stunden. Leer lassen für kein Limit.",
+  "clubCapacityInvalid": "Die Kapazität muss eine Zahl größer als 0 sein.",
+  "clubScheduleLabel": "Öffnungszeiten",
+  "clubScheduleHelperText": "In der Ortszeit des Clubs. Ohne Zeitfenster kann zu jeder Uhrzeit gespielt werden.",
+  "clubClosedLabel": "Geschlossen",
+  "clubScheduleSaveError": "Speichern fehlgeschlagen. Bitte versuche es erneut.",
+  "clubScheduleUnknown": "Öffnungszeiten nicht angegeben",
+  "clubCapacitySummary": "{count} Partien gleichzeitig",
+  "clubClosedAtThatTime": "Der Club ist zu dieser Zeit geschlossen. Jede Partie dauert {hours} Stunden: Wähle eine Uhrzeit, zu der sie ganz hineinpasst.",
+  "clubFullAtThatTime": "Der Club hat zu dieser Zeit keine freien Tische. Versuche eine andere Uhrzeit.",
+  "placeSearchClubsSection": "Clubs und Läden auf TableFoe",
+  "placeSearchOtherPlaces": "Andere Orte"
 }

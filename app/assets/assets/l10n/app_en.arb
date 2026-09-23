@@ -249,5 +249,22 @@
   "clubAddressLabel": "Address",
   "clubAddressHint": "Street, city...",
   "clubUnverifiedBadge": "Unverified",
-  "clubSavedMessage": "Club added."
+  "clubSavedMessage": "Club added.",
+  "clubScheduleTitle": "Opening hours & capacity",
+  "clubScheduleOpensAt": "Opens at",
+  "clubScheduleClosesAt": "Closes at",
+  "clubCapacityLabel": "Games at once (tables)",
+  "clubCapacityHint": "No limit",
+  "clubCapacityHelperText": "Each game takes a table for {hours} hours. Leave empty for no limit.",
+  "clubCapacityInvalid": "Capacity must be a number greater than 0.",
+  "clubScheduleLabel": "Opening hours",
+  "clubScheduleHelperText": "In the club's local time. If you add no time slots, games can be arranged at any time.",
+  "clubClosedLabel": "Closed",
+  "clubScheduleSaveError": "Couldn't save. Please try again.",
+  "clubScheduleUnknown": "Opening hours not set",
+  "clubCapacitySummary": "{count} games at once",
+  "clubClosedAtThatTime": "The club is closed at that time. Each game takes {hours} hours: pick a time when it fits entirely.",
+  "clubFullAtThatTime": "The club has no free tables at that time. Try another time.",
+  "placeSearchClubsSection": "TableFoe clubs and stores",
+  "placeSearchOtherPlaces": "Other places"
 }
