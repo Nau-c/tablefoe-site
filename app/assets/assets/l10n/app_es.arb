@@ -265,6 +265,7 @@
   "clubCapacitySummary": "{count} partidas a la vez",
   "clubClosedAtThatTime": "El club está cerrado a esa hora. Cada partida ocupa {hours} horas: elige una hora en la que quepa entera.",
   "clubFullAtThatTime": "El club no tiene mesas libres a esa hora. Prueba con otra hora.",
+  "clubSlotFreeTables": "Quedan {free} de {total} mesas ({seats} plazas) a esa hora.",
   "placeSearchClubsSection": "Clubs y tiendas de TableFoe",
   "placeSearchOtherPlaces": "Otros lugares"
 }
