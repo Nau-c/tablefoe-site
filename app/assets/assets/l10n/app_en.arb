@@ -266,6 +266,15 @@
   "clubClosedAtThatTime": "The club is closed at that time. Each game takes {hours} hours: pick a time when it fits entirely.",
   "clubFullAtThatTime": "The club has no free tables at that time. Try another time.",
   "clubSlotFreeTables": "{free} of {total} tables free ({seats} seats) at that time.",
+  "clubClaimButton": "I run this club",
+  "clubClaimTitle": "Manage this club",
+  "clubClaimExplanation": "We'll review your request by hand. Once approved you can set the club's opening hours and tables, so they're counted when games are published.",
+  "clubClaimMessageLabel": "How can we reach you?",
+  "clubClaimMessageHint": "Your role at the club and a phone, email or social handle",
+  "clubClaimSend": "Send request",
+  "clubClaimSent": "Request sent. We'll let you know once it's reviewed.",
+  "clubClaimPending": "Request pending",
+  "clubClaimError": "Couldn't send the request. Please try again.",
   "placeSearchClubsSection": "TableFoe clubs and stores",
   "placeSearchOtherPlaces": "Other places"
 }

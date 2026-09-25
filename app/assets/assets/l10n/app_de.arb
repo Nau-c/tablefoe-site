@@ -266,6 +266,15 @@
   "clubClosedAtThatTime": "Der Club ist zu dieser Zeit geschlossen. Jede Partie dauert {hours} Stunden: Wähle eine Uhrzeit, zu der sie ganz hineinpasst.",
   "clubFullAtThatTime": "Der Club hat zu dieser Zeit keine freien Tische. Versuche eine andere Uhrzeit.",
   "clubSlotFreeTables": "{free} von {total} Tischen frei ({seats} Plätze) zu dieser Uhrzeit.",
+  "clubClaimButton": "Ich leite diesen Club",
+  "clubClaimTitle": "Diesen Club verwalten",
+  "clubClaimExplanation": "Wir prüfen deine Anfrage manuell. Nach der Freigabe kannst du Öffnungszeiten und Tische des Clubs angeben, damit sie beim Veröffentlichen von Partien abgezogen werden.",
+  "clubClaimMessageLabel": "Wie erreichen wir dich?",
+  "clubClaimMessageHint": "Deine Rolle im Club und Telefon, E-Mail oder Social Media",
+  "clubClaimSend": "Anfrage senden",
+  "clubClaimSent": "Anfrage gesendet. Wir melden uns, sobald wir sie geprüft haben.",
+  "clubClaimPending": "Anfrage ausstehend",
+  "clubClaimError": "Die Anfrage konnte nicht gesendet werden. Versuche es erneut.",
   "placeSearchClubsSection": "Clubs und Läden auf TableFoe",
   "placeSearchOtherPlaces": "Andere Orte"
 }

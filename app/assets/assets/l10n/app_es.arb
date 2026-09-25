@@ -266,6 +266,15 @@
   "clubClosedAtThatTime": "El club está cerrado a esa hora. Cada partida ocupa {hours} horas: elige una hora en la que quepa entera.",
   "clubFullAtThatTime": "El club no tiene mesas libres a esa hora. Prueba con otra hora.",
   "clubSlotFreeTables": "Quedan {free} de {total} mesas ({seats} plazas) a esa hora.",
+  "clubClaimButton": "Soy el responsable de este club",
+  "clubClaimTitle": "Gestionar este club",
+  "clubClaimExplanation": "Revisaremos tu solicitud a mano. Cuando la aprobemos podrás indicar el horario y las mesas del club para que se descuenten al publicar partidas.",
+  "clubClaimMessageLabel": "¿Cómo te contactamos?",
+  "clubClaimMessageHint": "Tu cargo en el club y un teléfono, email o red social",
+  "clubClaimSend": "Enviar solicitud",
+  "clubClaimSent": "Solicitud enviada. Te avisaremos cuando la revisemos.",
+  "clubClaimPending": "Solicitud pendiente",
+  "clubClaimError": "No se pudo enviar la solicitud. Inténtalo de nuevo.",
   "placeSearchClubsSection": "Clubs y tiendas de TableFoe",
   "placeSearchOtherPlaces": "Otros lugares"
 }
