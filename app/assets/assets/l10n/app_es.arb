@@ -225,6 +225,11 @@
   "criterionRespectful": "Respetuoso",
   "criterionCompetitive": "Competitivo",
 
+  "favoritePlayersTitle": "Jugadores favoritos",
+  "noFavoritePlayersYet": "Aún no tienes favoritos. Toca el ♡ junto al nombre de un jugador para guardarlo aquí.",
+  "addFavoriteTooltip": "Añadir a favoritos",
+  "removeFavoriteTooltip": "Quitar de favoritos",
+  "favoriteUpdateError": "No se pudieron actualizar tus favoritos. Inténtalo de nuevo.",
   "ratingsTitle": "Valoraciones",
   "ratingsNoRatings": "Sin valoraciones todavía.",
   "ratingsTotalCount": "{count, plural, one{{count} valoración} other{{count} valoraciones}}",

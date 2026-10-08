@@ -225,6 +225,11 @@
   "criterionRespectful": "Respectful",
   "criterionCompetitive": "Competitive",
 
+  "favoritePlayersTitle": "Favourite players",
+  "noFavoritePlayersYet": "No favourites yet. Tap the ♡ next to a player's name to save them here.",
+  "addFavoriteTooltip": "Add to favourites",
+  "removeFavoriteTooltip": "Remove from favourites",
+  "favoriteUpdateError": "Couldn't update your favourites. Please try again.",
   "ratingsTitle": "Ratings",
   "ratingsNoRatings": "No ratings yet.",
   "ratingsTotalCount": "{count, plural, one{{count} rating} other{{count} ratings}}",
