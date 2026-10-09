@@ -280,6 +280,8 @@
   "clubCapacitySummary": "{count} tables for {seats} people",
   "clubClosedAtThatTime": "The club is closed at that time. Each game takes {hours} hours: pick a time when it fits entirely.",
   "clubFullAtThatTime": "The club has no free seats at that time. Try another time.",
+  "clubTagFull": "Full",
+  "clubTagClosed": "Closed",
   "clubSlotFreeTables": "{seats} seats left ({free} of {total} tables free) at that time.",
   "clubClaimButton": "I run this club",
   "clubClaimTitle": "Manage this club",

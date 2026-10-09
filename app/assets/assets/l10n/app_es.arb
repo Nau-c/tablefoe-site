@@ -280,6 +280,8 @@
   "clubCapacitySummary": "{count} mesas de {seats} personas",
   "clubClosedAtThatTime": "El club está cerrado a esa hora. Cada partida ocupa {hours} horas: elige una hora en la que quepa entera.",
   "clubFullAtThatTime": "El club no tiene plazas libres a esa hora. Prueba con otra hora.",
+  "clubTagFull": "Aforo lleno",
+  "clubTagClosed": "Cerrado",
   "clubSlotFreeTables": "Quedan {seats} plazas ({free} de {total} mesas libres) a esa hora.",
   "clubClaimButton": "Soy el responsable de este club",
   "clubClaimTitle": "Gestionar este club",
